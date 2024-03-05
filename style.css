@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    overflow-x: hidden ;
+    overflow-y: auto;
+    height: 100%;
+    perspective: 1px;
+}
+
+
+.block {
+    background: #999;
+    height: 1050px;
+    position: relative;
+    padding: 10vw;
+    display: grid;
+    align-items: center;
+    transform-style: preserve-3d;
+}
+
+.block > * {
+    position: relative;
+}
+
+.block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    box-shadow: 2px 4px 10px black;
+}
+.block1,.block5 {
+    justify-items: center;
+    color: white;
+    text-shadow: 1px 2px 4px black;
+}
+
+.block1,.block3{
+    z-index: 1;
+}
+
+.block3{
+    justify-items: end;
+}
+
+.block1::before{
+    background-image: url("https://i.pinimg.com/originals/35/d6/16/35d616c7ff0e652c4b26749758d8d82b.jpg");
+}
+.block2::before{
+    background-image: url("https://a.d-cd.net/naAAAgA2yeA-1920.jpg");
+}
+.block3::before{
+    background-image: url("https://sportishka.com/uploads/posts/2022-04/1650685974_9-sportishka-com-p-yaponiya-tokio-krasivo-foto-10.jpg");
+}
+.block4::before{
+    background-image: url("https://img2.fonwall.ru/o/cu/yaponiya-osaka-park.jpg");
+}
+.block5::before{
+    background-image: url("https://i.pinimg.com/originals/50/56/dd/5056dd26c13383c7ce942e22143a50ff.jpg");
+}
+
+
+h1,h2{
+    font-size: 90px;
+}
+
+.card{
+    width: 700px;
+    padding: 40px 50px;
+    border-radius: 16px;
+    background-color: rgba(255,255,255, 0.6);
+    box-shadow: 2px 2px 18px rgba(0,0,0, 0.4);
+    border: 2px solid rgba(255,255,255, 0.3);
+    backdrop-filter: blur(3px);
+}
+
+.card__title {
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.card__desc {
+    font-size: 20px;
+    line-height: 1.5em;
+}
+
+img {
+    width: 400px;
+    position: absolute !important;
+    top: 40%;
+    left: 20%;
+    box-shadow: 2px 3px 10px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    padding: 10px;
+    background-color: rgba(255,255,255, 0.5);
+}
+
+img:nth-child(2) {
+    width: 400px;
+    position: absolute !important;
+    top: 50%;
+}
+
+/* Parallax*/
+
+h1 {
+    transform: translateZ(0.4px) scale(0.6);
+}
+.block2, .block4 {
+    background-color: transparent;
+}
+.block2:before,
+.block4:before {
+    transform: translateZ(-1px) scale(2);
+}
+img {
+    transform: rotate(4deg) translateZ(0.25px) scale(0.75) ;
+}
+img:nth-child(2) {
+    transform: rotate(-7deg) translateZ(0.4px) scale(0.6);
+}
